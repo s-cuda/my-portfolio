@@ -33,7 +33,7 @@ const experiences = [
       "Designed dynamic dashboards in Superset across sales and customer success operations for Fit Credit and Freopay insurance products, improving sales efficiency 15% through real-time insights and reducing CS manual work 50% (40 to 20 hrs./week) via intelligent ticket prioritization.",
       "Pre-processed data and applied NLP techniques with Python, pandas, NLTK, and scikit-learn to construct a sentiment analysis model, helping the Customer Success team identify sentiments in support tickets.",
       "Optimized 7-8 critical business KPI reports by migrating from a legacy database to Amazon Redshift, rewriting queries, and creating new tables to improve performance.",
-      "Optimized query run time for these reports by 50%, cutting execution time from 50 minutes to 20 minutes, boosting Airflow workflow efficiency and eliminating report bottlenecks."
+      "Optimized query run time for these reports by 50%, cutting execution time from 50 minutes to 20 minutes, boosting Airflow workflow efficiency and eliminating report bottlenecks.",
     ],
   },
   {
@@ -86,7 +86,7 @@ export default function Experience() {
       <div>
         {experiences.map((exp, index) => (
           <AnimatedSection key={index} delay={index * 0.06}>
-            <div style={{ display: "grid", gridTemplateColumns: "12rem 1fr", gap: "3rem", borderTop: "1px solid #1a1a1a", padding: "2.5rem 0" }}>
+            <div className="two-col-grid" style={{ borderTop: "1px solid #1a1a1a", padding: "2.5rem 0" }}>
               <div>
                 <p style={{ fontSize: "0.82rem", color: "#2dd4bf", fontWeight: 500, marginBottom: "0.4rem", lineHeight: 1.5 }}>{exp.period}</p>
                 <p style={{ fontSize: "0.8rem", color: "#737373", fontWeight: 400 }}>{exp.location}</p>

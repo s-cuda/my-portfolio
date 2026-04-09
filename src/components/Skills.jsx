@@ -44,7 +44,7 @@ export default function Skills() {
       <div style={{ display: "flex", flexDirection: "column" }}>
         {skillGroups.map((group, index) => (
           <AnimatedSection key={group.category} delay={index * 0.08}>
-            <div style={{ display: "grid", gridTemplateColumns: "12rem 1fr", gap: "3rem", borderTop: "1px solid #1a1a1a", padding: "1.75rem 0", alignItems: "start" }}>
+            <div className="two-col-grid" style={{ borderTop: "1px solid #1a1a1a", padding: "1.75rem 0", alignItems: "start" }}>
               <p style={{ fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "#737373", paddingTop: "0.3rem" }}>
                 {group.category}
               </p>

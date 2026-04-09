@@ -56,7 +56,7 @@ export default function Education() {
       <div>
         {education.map((edu, index) => (
           <AnimatedSection key={index} delay={index * 0.1}>
-            <div style={{ display: "grid", gridTemplateColumns: "12rem 1fr", gap: "3rem", borderTop: "1px solid #1a1a1a", padding: "2.5rem 0" }}>
+            <div className="two-col-grid" style={{ borderTop: "1px solid #1a1a1a", padding: "2.5rem 0" }}>
               <div>
                 <p style={{ fontSize: "0.82rem", color: "#2dd4bf", fontWeight: 500, marginBottom: "0.4rem", lineHeight: 1.5 }}>{edu.period}</p>
                 <p style={{ fontSize: "0.8rem", color: "#737373" }}>{edu.location}</p>

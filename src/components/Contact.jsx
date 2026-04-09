@@ -52,13 +52,11 @@ export default function Contact() {
     e.preventDefault();
     const form = e.target;
     const data = new FormData(form);
-
     const res = await fetch("https://formspree.io/f/mnjoyvnz", {
       method: "POST",
       body: data,
       headers: { Accept: "application/json" },
     });
-
     if (res.ok) {
       setSubmitted(true);
       form.reset();
@@ -68,7 +66,7 @@ export default function Contact() {
   return (
     <section id="contact" style={{ padding: "6rem 0 8rem", borderTop: "1px solid #1a1a1a" }}>
       <AnimatedSection>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6rem", alignItems: "start" }}>
+        <div className="contact-grid">
 
           <div>
             <p style={{ fontSize: "0.72rem", fontWeight: 500, letterSpacing: "0.2em", textTransform: "uppercase", color: "#2dd4bf", marginBottom: "1rem" }}>
@@ -81,7 +79,6 @@ export default function Contact() {
               Actively looking for full-time Data Scientist and ML Engineer roles.
               Open to research collaborations and interesting ML projects.
             </p>
-
             <div style={{ display: "flex", gap: "1rem" }}>
               {socialLinks.map((link) => {
                 const Icon = link.icon;
@@ -113,80 +110,32 @@ export default function Contact() {
           <div>
             {submitted ? (
               <div style={{ border: "1px solid #2dd4bf", borderRadius: "4px", padding: "3rem 2rem", textAlign: "center" }}>
-                <p style={{ fontFamily: "Playfair Display, serif", fontSize: "1.5rem", color: "#fff", marginBottom: "0.75rem" }}>
-                  Message sent.
-                </p>
-                <p style={{ color: "#737373", fontSize: "0.9rem" }}>
-                  I will get back to you soon.
-                </p>
+                <p style={{ fontFamily: "Playfair Display, serif", fontSize: "1.5rem", color: "#fff", marginBottom: "0.75rem" }}>Message sent.</p>
+                <p style={{ color: "#737373", fontSize: "0.9rem" }}>I will get back to you soon.</p>
               </div>
             ) : (
-              <form
-                onSubmit={handleSubmit}
-                style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}
-              >
+              <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
                 <div>
-                  <label style={{ fontSize: "0.65rem", fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "#555", display: "block", marginBottom: "0.5rem" }}>
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    required
-                    placeholder="Your name"
-                    style={inputStyle}
+                  <label style={{ fontSize: "0.65rem", fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "#555", display: "block", marginBottom: "0.5rem" }}>Name</label>
+                  <input type="text" name="name" required placeholder="Your name" style={inputStyle}
                     onFocus={e => e.target.style.borderColor = "#2dd4bf"}
-                    onBlur={e => e.target.style.borderColor = "#1f1f1f"}
-                  />
+                    onBlur={e => e.target.style.borderColor = "#1f1f1f"} />
                 </div>
-
                 <div>
-                  <label style={{ fontSize: "0.65rem", fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "#555", display: "block", marginBottom: "0.5rem" }}>
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    required
-                    placeholder="your@email.com"
-                    style={inputStyle}
+                  <label style={{ fontSize: "0.65rem", fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "#555", display: "block", marginBottom: "0.5rem" }}>Email</label>
+                  <input type="email" name="email" required placeholder="your@email.com" style={inputStyle}
                     onFocus={e => e.target.style.borderColor = "#2dd4bf"}
-                    onBlur={e => e.target.style.borderColor = "#1f1f1f"}
-                  />
+                    onBlur={e => e.target.style.borderColor = "#1f1f1f"} />
                 </div>
-
                 <div>
-                  <label style={{ fontSize: "0.65rem", fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "#555", display: "block", marginBottom: "0.5rem" }}>
-                    Message
-                  </label>
-                  <textarea
-                    name="message"
-                    required
-                    placeholder="Tell me about the opportunity or project..."
-                    rows={5}
+                  <label style={{ fontSize: "0.65rem", fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "#555", display: "block", marginBottom: "0.5rem" }}>Message</label>
+                  <textarea name="message" required placeholder="Tell me about the opportunity or project..." rows={5}
                     style={{ ...inputStyle, resize: "vertical", lineHeight: 1.7 }}
                     onFocus={e => e.target.style.borderColor = "#2dd4bf"}
-                    onBlur={e => e.target.style.borderColor = "#1f1f1f"}
-                  />
+                    onBlur={e => e.target.style.borderColor = "#1f1f1f"} />
                 </div>
-
-                <button
-                  type="submit"
-                  style={{
-                    background: "#2dd4bf",
-                    color: "#000",
-                    border: "none",
-                    padding: "0.9rem 2rem",
-                    fontSize: "0.72rem",
-                    fontWeight: 600,
-                    letterSpacing: "0.12em",
-                    textTransform: "uppercase",
-                    cursor: "pointer",
-                    transition: "background 0.2s",
-                    borderRadius: "2px",
-                    alignSelf: "flex-start",
-                    fontFamily: "Inter, sans-serif",
-                  }}
+                <button type="submit"
+                  style={{ background: "#2dd4bf", color: "#000", border: "none", padding: "0.9rem 2rem", fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", cursor: "pointer", transition: "background 0.2s", borderRadius: "2px", alignSelf: "flex-start", fontFamily: "Inter, sans-serif" }}
                   onMouseEnter={e => e.currentTarget.style.background = "#5eead4"}
                   onMouseLeave={e => e.currentTarget.style.background = "#2dd4bf"}
                 >
