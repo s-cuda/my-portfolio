@@ -7,7 +7,7 @@ const projects = [
     description: "Production ML pipeline that scores financial transactions for fraud in real time using behavioral feature engineering. Maintains a rolling transaction history per card via a Redis feature store — scoring each charge in context of that card's history, not in isolation. Deployed as a containerized FastAPI service with a live monitoring dashboard, SHAP explainability on every prediction, and Evidently AI drift monitoring.",
     tech: ["Python", "LightGBM", "SHAP", "FastAPI", "Redis", "Docker", "MLflow", "Evidently AI", "Chart.js"],
     github: "https://github.com/s-cuda/fraud-detection",
-    demo: "https://www.loom.com/share/d96f728510744bf8a959cc95d16feef6",
+    demo: "https://www.loom.com/share/d8c9246296864c50bde071662e9886c1",
   },
   {
     title: "GitHub Repository Assistant",
