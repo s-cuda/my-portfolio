@@ -3,6 +3,13 @@ import AnimatedSection from "@/components/AnimatedSection";
 
 const projects = [
   {
+    title: "FraudShield: Real-Time Fraud Detection",
+    description: "Production ML pipeline that scores financial transactions for fraud in real time using behavioral feature engineering. Maintains a rolling transaction history per card via a Redis feature store — scoring each charge in context of that card's history, not in isolation. Deployed as a containerized FastAPI service with a live monitoring dashboard, SHAP explainability on every prediction, and Evidently AI drift monitoring.",
+    tech: ["Python", "LightGBM", "SHAP", "FastAPI", "Redis", "Docker", "MLflow", "Evidently AI", "Chart.js"],
+    github: "https://github.com/s-cuda/fraud-detection",
+    demo: "https://www.loom.com/share/d96f728510744bf8a959cc95d16feef6",
+  },
+  {
     title: "GitHub Repository Assistant",
     description: "AI-powered GitHub repository analysis system using LangChain agents with ReAct framework. Answers natural language queries about repository history, pull requests, and codebase evolution. Indexes 100+ commits in under 2 minutes using semantic search.",
     tech: ["LangChain", "OpenAI", "ChromaDB", "RAG", "Python"],
@@ -16,7 +23,7 @@ const projects = [
   },
   {
     title: "OS-MOSIS: OmniPython",
-    description: "Open-source contribution merged upstream : added Python bindings to a GPU solver for pressure-from-PIV computation, expanding access from MATLAB-only to the Python scientific community. Validated via Taylor vortex simulations with less than 0.05% error. Packaged as pip-installable.",
+    description: "Open-source contribution merged upstream — added Python bindings to a GPU solver for pressure-from-PIV computation, expanding access from MATLAB-only to the Python scientific community. Validated via Taylor vortex simulations with less than 0.05% error. Packaged as pip-installable.",
     tech: ["CUDA", "C++", "PyBind11", "HPC", "Scientific Computing", "Open Source"],
     github: "https://github.com/3dfernando/pressure-osmosis/pull/1",
   },
@@ -36,12 +43,13 @@ export default function Projects() {
         </div>
       </AnimatedSection>
 
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "1.5rem" }}>
+      <div>
         {projects.map((project, index) => (
-          <AnimatedSection key={project.title} delay={index * 0.1}>
+          <AnimatedSection key={project.title} delay={index * 0.08}>
             <ProjectCard {...project} index={index} />
           </AnimatedSection>
         ))}
+        <div style={{ borderTop: "1px solid #1a1a1a" }} />
       </div>
     </section>
   );
